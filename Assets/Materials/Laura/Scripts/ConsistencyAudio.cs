@@ -25,9 +25,9 @@ public class ConsistencyAudio : MonoBehaviour
     {
         bool isValidScene = false;
 
-        foreach (int sceneID in allowedSceneIDs)
+        foreach (int id in allowedSceneIDs)
         {
-            if (scene.buildIndex == sceneID)
+            if (scene.buildIndex == id)
             {
                 isValidScene = true;
                 break;
@@ -36,11 +36,14 @@ public class ConsistencyAudio : MonoBehaviour
 
         if (!isValidScene)
         {
-            SceneManager.sceneLoaded -= OnSceneLoaded; 
-            instance = null;                           
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            instance = null;
             Destroy(gameObject);
         }
     }
 
-
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 }

@@ -1,27 +1,30 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(Button))]
+[RequireComponent(typeof(AudioSource))]
 
-public class ClickSound : MonoBehaviour
+public class ClickSound : MonoBehaviour, IPointerEnterHandler
 {
     public AudioClip clickSound;
     private AudioSource audioSource;
 
-    void Start()
+    void Awake()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
+
+        
         audioSource.playOnAwake = false;
-        audioSource.clip = clickSound;
-
-        GetComponent<Button>().onClick.AddListener(PlayClickSound);
+        audioSource.spatialBlend = 0f; 
+        audioSource.priority = 0;
+        audioSource.volume = 1f;
     }
 
-    void PlayClickSound()
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        audioSource.PlayOneShot(clickSound);
-        Debug.Log("bruum");
+        if (clickSound != null)
+        {
+            audioSource.PlayOneShot(clickSound);
+        }
     }
-
 
 }
