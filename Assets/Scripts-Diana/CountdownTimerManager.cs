@@ -15,11 +15,7 @@ public class CountdownTimerManager : MonoBehaviour
         instance = this;
         countdownTimerTextUI = GameObject.Find("CountdownTimerTextUI").GetComponent<TextMeshProUGUI>();
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    
 
     // Update is called once per frame
     void Update()
@@ -31,6 +27,7 @@ public class CountdownTimerManager : MonoBehaviour
         }else if(_remainingTime < 0)
         {
             _remainingTime = 0;
+            //Call GameManager to GameOver-Losing
         }
 
         int minutes = Mathf.FloorToInt(_remainingTime / 60);
