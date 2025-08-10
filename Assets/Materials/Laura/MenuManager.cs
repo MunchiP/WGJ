@@ -10,18 +10,15 @@ public class MenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
     public void credits()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(4);
     }
     public void returnMainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
-    public void quitGame()
-    {
-        Application.Quit();
-    }
+    
 }
