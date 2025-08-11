@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lobita_Idle0000_0: -5823757111559821371
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

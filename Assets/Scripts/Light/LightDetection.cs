@@ -19,6 +19,8 @@ public class LightDetection : MonoBehaviour
             Debug.Log("Jugador detectado - Pierdes");
             // Aquí puedes cargar otra escena, restar vidas, etc.
         }
+
+        
     }
 
     private bool IsTargetExposed(Collider2D target)
