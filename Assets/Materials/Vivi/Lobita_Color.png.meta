@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c57f186d4e78fd74893a22066fcb0e99
+guid: 8b85741a3cd46994faf24294a44da78f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8378291427019573076
-    second: Walk Cycle_Ovejita0001_0
+      213: -6312459245798266507
+    second: Lobita_Color_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk Cycle_Ovejita0001_0
+      name: Lobita_Color_0
       rect:
         serializedVersion: 2
-        x: 154
+        x: 9
         y: 0
-        width: 200
-        height: 486
+        width: 503
+        height: 768
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ca83cc356545abb80800000000000000
-      internalID: -8378291427019573076
+      spriteID: 5796013c2c3a568a0800000000000000
+      internalID: -6312459245798266507
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Walk Cycle_Ovejita0001_0: -8378291427019573076
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
