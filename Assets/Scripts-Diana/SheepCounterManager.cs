@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SheepCounterManager : MonoBehaviour
 {
@@ -37,18 +38,17 @@ public class SheepCounterManager : MonoBehaviour
     public void AddSavedSheep()
     {
         print("AddSavedSheep");
-        if(sheepCounter < maxSavedSheep)
+        if (sheepCounter < maxSavedSheep)
         {
             SetSheepImageUI();
             sheepCounter++;
         }
 
-        if(sheepCounter >= maxSavedSheep)
+        if (sheepCounter >= maxSavedSheep)
         {
-            //Call GameManager to GameOver-Winning
+           SceneManager.LoadScene(3);
         }
     }
-
     private void SetSheepImageUI()
     {
         sheepImageUI[sheepCounter].GetComponent<Image>().color = UIImageColor;
