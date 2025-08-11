@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lobita_Walk Cycle_Lana0004_0: -9028185862570383368
+      Lobita_Walk Cycle_Lana0004_1: 1737343587126341045
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

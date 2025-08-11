@@ -185,7 +185,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Lobita_lateral_Color_0: 4632431080613471324
+      Lobita_lateral_Color_1: 6022506072495786146
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
