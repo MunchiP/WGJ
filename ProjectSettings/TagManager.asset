@@ -7,6 +7,9 @@ TagManager:
   - Triangle
   - Occluder
   - Light
+  - SheepSavedArea
+  - SheepImageUI
+  - Wool
   layers:
   - Default
   - TransparentFX

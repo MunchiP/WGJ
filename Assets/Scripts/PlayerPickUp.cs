@@ -6,7 +6,7 @@ public class PlayerPickUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Triangle") && carriedObject == null)
+        if (collision.CompareTag("Wool") && carriedObject == null)
         {
             carriedObject = collision.gameObject;
             carriedObject.transform.SetParent(transform); 
