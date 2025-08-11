@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 5113305516112643439, guid: 7453e2c93ccde8d47b7dd1bf3a803deb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,8 +103,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightDetection: {fileID: 6955702532338728831}
   pointLight: {fileID: 4112572521098784766}
-  toggleAutomatically: 0
-  toggleInterval: 3
+  toggleAutomatically: 1
+  minOnTime: 3
+  maxOnTime: 6
+  minOffTime: 3
+  maxOffTime: 6
+  warningSound: turn_on_the_lights
+  warningDelay: 1.2
+  startOff: 1
+  lightDimIntensity: 0.2
+  lightOnIntensity: 3
+  alphaOn: 1
+  alphaOff: 0.3
+  debugLogs: 1
 --- !u!1 &4067434431082752103
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,8 +165,8 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.15726236, g: 0.25287724, b: 0.5849056, a: 1}
-  m_Intensity: 3
+  m_Color: {r: 0.44010326, g: 0.46753162, b: 0.8113208, a: 1}
+  m_Intensity: 10
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -179,7 +190,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 3
+  m_PointLightOuterRadius: 2
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -202,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 885231a9ff01de645ab1cc857c0d8890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3
+  range: 2
   angle: 360
   playerMask:
     serializedVersion: 2

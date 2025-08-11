@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f81fb0ccb06173d47955218752e3a1b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 4
   waypointParent: {fileID: 0}
   _isWaiting: 1
   anim: {fileID: 0}
