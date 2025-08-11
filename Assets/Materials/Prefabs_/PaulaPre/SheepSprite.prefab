@@ -35,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 19.18, y: 6.8, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -83,8 +83,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -309390297
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2423531156556543889, guid: 5d80513b86cb4ed42b8ad55974f0e1dd, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: c3b31840f229a4648a49fadf424ac327, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -268,8 +268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sheepSoundName: sheep_sound_2
-  minDelay: 3
-  maxDelay: 8
+  minDelay: 6
+  maxDelay: 12
 --- !u!50 &-2964037208744019127
 Rigidbody2D:
   serializedVersion: 5
@@ -334,4 +334,4 @@ MonoBehaviour:
   moveSpeed: 4
   waypointParent: {fileID: 0}
   _isWaiting: 1
-  anim: {fileID: 0}
+  anim: {fileID: -6260077497034354214}

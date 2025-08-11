@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class CountdownTimerManager : MonoBehaviour
 {
@@ -24,10 +25,11 @@ public class CountdownTimerManager : MonoBehaviour
         {
             _remainingTime -= Time.deltaTime;
 
-        }else if(_remainingTime < 0)
+        }
+        else if(_remainingTime < 0)
         {
             _remainingTime = 0;
-            //Call GameManager to GameOver-Losing
+            SceneManager.LoadScene(2);
         }
 
         int minutes = Mathf.FloorToInt(_remainingTime / 60);
