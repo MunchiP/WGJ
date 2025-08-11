@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b1c8d78154cbe374489859da10dbd017
+guid: 0dc9d31d952ac8440b4b1ff4636d50fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5823757111559821371
-    second: Lobita_Idle0000_0
+      213: -6148531270491991582
+    second: Lobita_Idle_Sosteniendo lana0002_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,19 +97,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -126,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lobita_Idle0000_0
+      name: Lobita_Idle_Sosteniendo lana0002_0
       rect:
         serializedVersion: 2
         x: 9
         y: 0
-        width: 503
-        height: 768
+        width: 498
+        height: 760
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c7625b33cbdd2fa0800000000000000
-      internalID: -5823757111559821371
+      spriteID: 2e191f3c2670caaa0800000000000000
+      internalID: -6148531270491991582
       vertices: []
       indices: 
       edges: []
@@ -161,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Lobita_Idle0000_0: -5823757111559821371
+      Lobita_Idle_Sosteniendo lana0002_0: -6148531270491991582
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
