@@ -15,9 +15,14 @@ public class WaypointNPCMover : MonoBehaviour
     private Transform[] waypoints;
     private int currentWaypointIndex;
 
+    [SerializeField]
+    private Animator anim;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         Transform parent = transform.parent.transform;
         waypointParent = parent.Find("WaypointParent");
 
@@ -37,13 +42,21 @@ public class WaypointNPCMover : MonoBehaviour
         {
             return;
         }
+        anim.SetBool("isMoving", true);
+        //anim.Play("Walk");  //No funciono...
 
         MoveToWaypoint();
     }
 
     private void MoveToWaypoint()
     {
+
         Transform target = waypoints[currentWaypointIndex];
+        Vector3 direction = target.position - transform.position;
+        if(direction.x < 0 && transform.localScale.x > 0 || direction.x>0 && transform.localScale.x <0 )
+        {
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        }
         transform.position = Vector2.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
 
         if(Vector2.Distance(transform.position, target.position)< 0.1f)
