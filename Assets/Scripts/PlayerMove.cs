@@ -12,7 +12,7 @@ public class PlayerMove : MonoBehaviour
 
     // [Header("Animator reference")]
     // [Tooltrip("Animator")]
-    // public Animator animator;
+    public Animator animator;
     // [Tooltrip("SpriteRenderer fleep")]
     // public SpriteRenderer spriteRenderer;
 
@@ -22,10 +22,22 @@ public class PlayerMove : MonoBehaviour
 
     void Awake(){
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     public void OnMove(InputAction.CallbackContext context){
+        animator.SetBool("isMoving", true);
+        if (context.canceled)
+        {
+            animator.SetBool("isMoving", false);
+        }
+
         moveInput = context.ReadValue<Vector2>();
+        
+        if(moveInput.x < 0 && transform.localScale.x > 0 || moveInput.x > 0 && transform.localScale.x < 0)
+        {
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        }
     }
 
     void FixedUpdate()
