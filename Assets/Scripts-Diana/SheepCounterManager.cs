@@ -14,7 +14,13 @@ public class SheepCounterManager : MonoBehaviour
     private GameObject[] sheepImageUI;
     
     private Color UIImageColor;
-    
+
+    //**
+    //AGregado en el codigo de Diana para evitar cargas repetidas
+    private bool sceneLoading;
+    public bool AllSheepSaved => sheepCounter >= maxSavedSheep; // lo declaro publico para consultarlo desd el scritp del timer
+    //**
+
     private void Awake()
     {
         instance = this;
@@ -37,6 +43,7 @@ public class SheepCounterManager : MonoBehaviour
 
     public void AddSavedSheep()
     {
+        
         print("AddSavedSheep");
         if (sheepCounter < maxSavedSheep)
         {
@@ -44,10 +51,34 @@ public class SheepCounterManager : MonoBehaviour
             sheepCounter++;
         }
 
+        //**
+        Debug.Log("AddSabedSheep");
+        if (sceneLoading)
+        {
+            return;
+        }
+
         if (sheepCounter >= maxSavedSheep)
         {
-           SceneManager.LoadScene(3);
+            if (CountdownTimerManager.instance != null)
+            {
+                CountdownTimerManager.instance.StopTimerAndLoad("Level2");
+            }
+            else
+            {
+                //  sceneLoading = true;
+            SceneManager.LoadScene("Level2");
+            }
+           
         }
+
+        //**
+
+
+        // if (sheepCounter >= maxSavedSheep)
+        // {
+        //    SceneManager.LoadScene(3);
+        // }
     }
     private void SetSheepImageUI()
     {

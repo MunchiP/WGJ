@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LightDetection : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class LightDetection : MonoBehaviour
 
         if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            SceneManager.LoadScene("GameOverLight");
             return true; // Jugador visible
         }
 
