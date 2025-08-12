@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    
+
     // Singleton: accede de manera facil desde otros scripts
     public static AudioManager Instance;
     // La clase interna -sound- es visible en el inspector
-    [System.Serializable] public class Sound 
+    [System.Serializable]
+    public class Sound
     {
         public string name; // Nombre para identificar el sonido
         public UnityEngine.AudioClip clip; //Archivo del audio que se va a reproducir
@@ -17,7 +18,7 @@ public class AudioManager : MonoBehaviour
     }
 
     // Lista de los sonidos que se agregan en el inspector
-    public List<Sound> sounds = new List<Sound>(); 
+    public List<Sound> sounds = new List<Sound>();
 
     // El audioSourcee que reproducirá los sonidos
     private AudioSource audioSource;
@@ -28,7 +29,8 @@ public class AudioManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this; // Si no hay ninguna otra instancia, esta es la inicial
-        } else 
+        }
+        else
         {
             Destroy(gameObject); // en caso de que existra otro, lo destruye
         }
@@ -37,7 +39,7 @@ public class AudioManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-        // -M- Método que reproduce el sonido según el nombre
+    // -M- Método que reproduce el sonido según el nombre
     //  public IEnumerator Play(string sonidoNombre)
     // {
     //     Sound sonido = sounds.Find(x => x.name == sonidoNombre); // Lo busca en la lista
@@ -54,21 +56,48 @@ public class AudioManager : MonoBehaviour
     // }
 
     public void Play(string sonidoNombre)
+    {
+        Sound sonido = sounds.Find(x => x.name == sonidoNombre);
+
+        if (sonido != null)
         {
-            Sound sonido = sounds.Find(x => x.name == sonidoNombre);
-
-            if (sonido != null)
-            {
-                // Debug.Log("Nombre: " + sonidoNombre + " sound: " + sonido );
-                 audioSource.PlayOneShot(sonido.clip, sonido.volumen);
-            }
-
+            // Debug.Log("Nombre: " + sonidoNombre + " sound: " + sonido );
+            audioSource.PlayOneShot(sonido.clip, sonido.volumen);
+            // audioSource.clip = sonido.clip;
+            // audioSource.volume = sonido.volumen;
+            // audioSource.loop = true;
+            // audioSource.Play();
         }
+        else
+        {
+            Debug.LogWarning("No se encontró el sonido: " + sonidoNombre);
+        }
+
+    }
 
     // Reproducción de cada uno los clipsssssss
     public float GetClipLength(string name)
     {
         UnityEngine.AudioClip clip = sounds.Find(s => s.name == name)?.clip;
         return clip != null ? clip.length : 1f;
+    }
+
+
+    //Reproduccion de musica de fondo
+    public void PlayMusicLoop(string sonidoNombre)
+    {
+        Sound sonido = sounds.Find(x => x.name == sonidoNombre);
+
+        if (sonido != null)
+        {
+            audioSource.clip = sonido.clip;
+            audioSource.volume = sonido.volumen;
+            audioSource.loop = true; // esto hace que se repita
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("No se encontró la música: " + sonidoNombre);
+        }
     }
 }
