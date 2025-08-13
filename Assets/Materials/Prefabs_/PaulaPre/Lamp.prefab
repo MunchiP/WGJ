@@ -108,7 +108,7 @@ MonoBehaviour:
   maxOnTime: 6
   minOffTime: 3
   maxOffTime: 6
-  warningSound: turn_on_the_lights
+  warningSound: turn_on_the_lights_click
   warningDelay: 1.2
   startOff: 1
   lightDimIntensity: 0.2
