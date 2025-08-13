@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,8 +25,14 @@ public class LightDetection : MonoBehaviour
         
     }
 
+
+    // Para que no pierda las vidas de golpe
+private bool hasDetected = false;
     private bool IsTargetExposed(Collider2D target)
     {
+
+         if (hasDetected) return false;
+
         Vector2 dirToTarget = (target.bounds.center - transform.position).normalized;
         float distToTarget = Vector2.Distance(transform.position, target.bounds.center);
 
@@ -38,12 +45,39 @@ public class LightDetection : MonoBehaviour
 
         if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            SceneManager.LoadScene("GameOverLight");
-            return true; // Jugador visible
+             hasDetected = true; 
+            LifeManager.instance.LoseLife();
+            StartCoroutine(ResetDetection());
+            return true;
         }
 
-        return false; // Algo bloquea la luz
+        return false;
+
+
+        // Modificado para implementar el sistema de vidas
+        // Vector2 dirToTarget = (target.bounds.center - transform.position).normalized;
+        // float distToTarget = Vector2.Distance(transform.position, target.bounds.center);
+
+        // float halfAngle = angle / 2f;
+        // float angleToTarget = Vector2.Angle(transform.right, dirToTarget);
+
+        // if (angleToTarget > halfAngle) return false;
+
+        // RaycastHit2D hit = Physics2D.Raycast(transform.position, dirToTarget, distToTarget, occluderMask | playerMask);
+
+        // if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("Player"))
+        // {
+        //     SceneManager.LoadScene("GameOverLight");
+        //     return true; // Jugador visible
+        // }
+
+        // return false; // Algo bloquea la luz
     }
+private IEnumerator ResetDetection()
+{
+    yield return new WaitForSeconds(1f); // Tiempo de invulnerabilidad
+    hasDetected = false;
+}
 
     // Esto dibuja el rango y ángulo en el editor
     private void OnDrawGizmos()

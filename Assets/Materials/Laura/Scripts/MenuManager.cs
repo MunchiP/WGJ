@@ -10,7 +10,7 @@ public class MenuManager : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("GamePlay_");
     }
     public void credits()
     {
