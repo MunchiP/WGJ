@@ -26,4 +26,17 @@ public class EmptySpotsManager : MonoBehaviour
     {
         
     }
+
+    public void DropWoolAfterUnlockSheeps()
+    {
+        //Buscar GO: obstaculos
+
+        //almacenar los hijos
+
+        //loop sobre los hijos y deshabilitar RigiBody para que no puedan ser movidos de nuevo
+
+            //Sacar Wool de cada una de las jarras
+
+
+    }
 }

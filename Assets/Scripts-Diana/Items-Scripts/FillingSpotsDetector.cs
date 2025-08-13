@@ -19,11 +19,11 @@ public class FillingSpotsDetector : MonoBehaviour
             if(emptySpotsManager.NumFilledSpots >= emptySpotsManager.NumEmptySpots)
             {
                 //Si todos los espacios fueron superpuestos con una jarra deshabilitar el game object con el collider donde están las ovejas
-
                 GameObject zoneSheep1 = GameObject.Find("ZoneSheep1"); // OJO: conservar el nombre del GO
-                
                 zoneSheep1.transform.GetChild(0).transform.gameObject.SetActive(false);
 
+                GameObject newZoneDown = GameObject.Find("NewZoneDown");
+                newZoneDown.SetActive(false);
             }
 
         }
