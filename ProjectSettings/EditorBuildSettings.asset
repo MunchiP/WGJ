@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 3b189a3547a0885409d8e439018de9b1
   - enabled: 1
-    path: Assets/Scenes/HowToPlay.unity
+    path: Assets/Scenes/Story.unity
     guid: 9ec45e17e144db44fb2fb8787d4bce09
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
@@ -29,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GamePlay_.unity
     guid: 0d8a72b4eb38c7942a29308d6adfd103
+  - enabled: 1
+    path: Assets/Scenes/HowToPlay.unity
+    guid: 9cf64e428d7a0014e8531d76da33fee3
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

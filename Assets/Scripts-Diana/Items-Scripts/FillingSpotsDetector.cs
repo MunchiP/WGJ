@@ -24,6 +24,10 @@ public class FillingSpotsDetector : MonoBehaviour
 
                 GameObject newZoneDown = GameObject.Find("NewZoneDown");
                 newZoneDown.SetActive(false);
+
+                //Desactivar el botón de Reinicio del Puzzle
+                GameObject resetZone1Button = GameObject.Find("ResetZone1Button");
+                resetZone1Button.SetActive(false);
             }
 
         }
