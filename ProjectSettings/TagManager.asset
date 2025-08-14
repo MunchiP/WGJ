@@ -10,6 +10,7 @@ TagManager:
   - SheepSavedArea
   - SheepImageUI
   - Wool
+  - Item
   layers:
   - Default
   - TransparentFX
