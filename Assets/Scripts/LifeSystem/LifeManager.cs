@@ -31,6 +31,8 @@ public static LifeManager instance; // Para acceder desde otros scripts
         currentLives--;
         UpdateHeartsUI();
 
+        AudioManager.Instance.Play("wolf_howl");
+
         if (currentLives <= 0)
         {
             SceneManager.LoadScene("GameOverLight");

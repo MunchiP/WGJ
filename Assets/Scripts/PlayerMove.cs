@@ -20,9 +20,20 @@ public class PlayerMove : MonoBehaviour
     private Vector2 moveInput;
 
 
-    void Awake(){
+    void Awake()
+    {
+        var existingPlayers = FindObjectsOfType<PlayerMove>();
+        if (existingPlayers.Length > 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        //DontDestroyOnLoad(gameObject); // ← Mantiene el jugador entre escenas
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        
+
     }
 
     public void OnMove(InputAction.CallbackContext context){

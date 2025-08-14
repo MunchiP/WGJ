@@ -29,10 +29,12 @@ public class AudioManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this; // Si no hay ninguna otra instancia, esta es la inicial
+            DontDestroyOnLoad(gameObject); 
         }
         else
         {
             Destroy(gameObject); // en caso de que existra otro, lo destruye
+            return;
         }
 
         // Obtiene el AudioSource adjunto al GameObject
