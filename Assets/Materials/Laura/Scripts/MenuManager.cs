@@ -14,11 +14,16 @@ public class MenuManager : MonoBehaviour
     }
     public void credits()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("Credits");
     }
     public void returnMainMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void ShowStoryAndInstructions()
+    {
+        SceneManager.LoadScene("Story");
     }
     
 }

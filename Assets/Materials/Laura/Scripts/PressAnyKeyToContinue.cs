@@ -11,7 +11,17 @@ public class NewMonoBehaviourScript : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            SceneManager.LoadScene(3); 
+            Scene currentScene = SceneManager.GetActiveScene();
+            print(currentScene.name);
+            if(currentScene.name == "Story") 
+            {
+                SceneManager.LoadScene("HowToPlay"); 
+            }
+            if(currentScene.name == "HowToPlay") 
+            {
+                SceneManager.LoadScene("GamePlay_"); 
+            }
+
         }
     }
 }
