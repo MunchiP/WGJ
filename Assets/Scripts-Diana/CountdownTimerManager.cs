@@ -8,7 +8,7 @@ public class CountdownTimerManager : MonoBehaviour
 
     private TextMeshProUGUI countdownTimerTextUI;
     [SerializeField]
-    float _remainingTime;
+    public float _remainingTime;
     public float RemainingTime { set => _remainingTime = value; }  //Si quiere usarse para modificar la dificultad
 
     //**
